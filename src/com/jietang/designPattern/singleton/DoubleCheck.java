@@ -1,5 +1,8 @@
 package com.jietang.designPattern.singleton;
 
+/**
+ * 双重检查：线程安全
+ */
 public class DoubleCheck {
     private static volatile DoubleCheck doubleCheck;
 
