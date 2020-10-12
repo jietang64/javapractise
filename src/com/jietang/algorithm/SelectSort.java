@@ -8,7 +8,7 @@ package com.jietang.algorithm;
  * 空间复杂度: O(1)
  * 稳定性：稳定
  */
-public class selectSort {
+public class SelectSort {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 3, 4, 5, 12, -1, 3};
         System.out.println(selectSort(arr));
