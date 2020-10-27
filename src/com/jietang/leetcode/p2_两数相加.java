@@ -1,5 +1,7 @@
 package com.jietang.leetcode;
 
+import com.jietang.entity.ListNode;
+
 public class p2_两数相加 {
 
     public static void main(String[] args) {

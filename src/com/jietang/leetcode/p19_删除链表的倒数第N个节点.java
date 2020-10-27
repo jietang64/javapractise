@@ -1,5 +1,7 @@
 package com.jietang.leetcode;
 
+import com.jietang.entity.ListNode;
+
 public class p19_删除链表的倒数第N个节点 {
 
     public static void main(String[] args) {

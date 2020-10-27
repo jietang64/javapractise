@@ -48,6 +48,8 @@ package com.jietang.leetcode;
  👍 945 👎 0*/
 
 
+import com.jietang.entity.ListNode;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
