@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ############################################################
-# 手动替换pod的镜像包版本
+# node节点无法pull到镜像时 动替换pod的镜像包版本
 # 执行样例： update_pod.sh 组件名 镜像包地址
 ############################################################
 
@@ -21,11 +21,11 @@ fi
 
 DIR=$(cd $(dirname $0); pwd)
 
-# 1. 获取正在运行的pod的版本号，所在宿主机，容器ID等信息
+# 1. 从镜像仓库拉取镜像
 docker pull $2
 docker save -o /data/k8s-packages/$1.tar $2
 
-# 4. 开始分发镜像
+# 2. 开始分发镜像
 tmp_nodes=`kubectl get nodes -owide | awk '{print $6}'`
 NODES=($tmp_nodes)
 unset NODES[0]
@@ -47,7 +47,7 @@ if [ -e  /data/k8s-packages/$1.tar ]; then
     done
     echo "$(date "+%Y-%m-%d %H:%M:%S"): 镜像分发完成..." >> op.log
 
-    # 5. 滚动更新
+    # 3. 滚动更新
     kubectl -n znwh set image deployment/$1 $1=$2
     echo "$(date "+%Y-%m-%d %H:%M:%S"): k8s中$1的镜像版本已更新，请输入 [ kubectl -n znwh get po -owide | grep $1 ] 检查..." >> op.log
 else
