@@ -15,20 +15,14 @@ import java.util.Stack;
  */
 public class p32_最长有效括号 {
     public static void main(String[] args) {
-        System.out.println(longestValidParentheses("(()))())("));
+        System.out.println(longestValidParentheses("(()"));
     }
 
     public static int longestValidParentheses(String s) {
-        Integer max = 0, cur_max = 0, k = -1;  //历史最大长度 //当前最大长度 //当前位置k
+        Integer max = 0, cur_max = 0, k = s.indexOf("()");  //历史最大长度 //当前最大长度 //当前位置k
         List<Integer> last_k = new ArrayList<>();
         List<Integer> last_max = new ArrayList<>();
-        while (s.length() > 1) {
-            if (!s.contains("()")) {
-                break;
-            }
-            if (k == -1) {
-                k = s.indexOf("()");
-            }
+        while (s.length() > 1 && s.contains("()")) {
             if (s.charAt(k) == '(' && s.charAt(k + 1) == ')') {
                 s = s.replaceFirst("\\(\\)", "");
                 cur_max = cur_max + 2;
@@ -37,13 +31,15 @@ public class p32_最长有效括号 {
                 cur_max = cur_max + 2;
                 k--;
             } else {
-                last_max.add(cur_max) ;
+                //当前是(( 或者 )) 或者 )( ，保存当前点位置和长度
+                last_max.add(cur_max);
+                last_k.add(k);
                 max = max > cur_max ? max : cur_max;
                 cur_max = 0;
-                last_k.add(k);
-                k = -1;
+                k = s.indexOf("()");
             }
             if (last_k.contains(k)) {
+                //当前点和上次保存点相邻，将上次的长度加上去
                 cur_max = cur_max + last_max.get(last_k.indexOf(k));
                 last_max.remove(last_k.indexOf(k));
                 last_k.remove(k);
