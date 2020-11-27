@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class p1_两数之和 {
-
-    public static void main(String[] args) {
+    public  void main() {
     }
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();

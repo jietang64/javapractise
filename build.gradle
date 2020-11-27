@@ -1,0 +1,16 @@
+version '1.0-SNAPSHOT'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+
+repositories {
+    maven {
+        url "http://maven.iflytek.com:8081/nexus/content/groups/public/"
+    }
+}
+
+
+dependencies {
+
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+
+}

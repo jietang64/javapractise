@@ -1,5 +1,10 @@
 package com.jietang.leetcode;
 
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -14,11 +19,10 @@ import java.util.Stack;
  * 4.其他重新获取记录k的位置m，重新获取k
  */
 public class p32_最长有效括号 {
-    public static void main(String[] args) {
-        System.out.println(longestValidParentheses("(()"));
-    }
 
-    public static int longestValidParentheses(String s) {
+    @ParameterizedTest
+    @ValueSource(strings = {"(()","(())"})
+    void longestValidParentheses(String s) {
         Integer max = 0, cur_max = 0, k = s.indexOf("()");  //历史最大长度 //当前最大长度 //当前位置k
         List<Integer> last_k = new ArrayList<>();
         List<Integer> last_max = new ArrayList<>();
@@ -45,6 +49,7 @@ public class p32_最长有效括号 {
                 last_k.remove(k);
             }
         }
-        return max > cur_max ? max : cur_max;
+        System.out.println(max > cur_max ? max : cur_max);
+        //return max > cur_max ? max : cur_max;
     }
 }
