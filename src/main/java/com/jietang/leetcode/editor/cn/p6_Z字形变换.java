@@ -1,4 +1,4 @@
-package com.jietang.leetcode;
+package com.jietang.leetcode.editor.cn;
 
 public class p6_Z字形变换 {
 

@@ -1,4 +1,4 @@
-package com.jietang.leetcode;
+package com.jietang.leetcode.editor.cn;
 
 /*给你一个链表数组，每个链表都已经按升序排列。
 

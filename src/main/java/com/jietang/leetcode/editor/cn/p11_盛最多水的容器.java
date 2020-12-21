@@ -1,4 +1,4 @@
-package com.jietang.leetcode;
+package com.jietang.leetcode.editor.cn;
 
 public class p11_盛最多水的容器 {
 

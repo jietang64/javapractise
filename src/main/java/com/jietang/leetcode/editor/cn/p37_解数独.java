@@ -1,4 +1,4 @@
-package com.jietang.leetcode;
+package com.jietang.leetcode.editor.cn;
 
 import java.util.ArrayList;
 import java.util.List;

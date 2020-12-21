@@ -1,4 +1,4 @@
-package com.jietang.leetcode;
+package com.jietang.leetcode.editor.cn;
 
 
 import org.junit.jupiter.api.Test;

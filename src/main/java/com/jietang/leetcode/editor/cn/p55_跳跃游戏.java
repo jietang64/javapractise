@@ -1,4 +1,4 @@
-package com.jietang.leetcode;
+package com.jietang.leetcode.editor.cn;
 
 public class p55_跳跃游戏 {
     public static void main(String[] args) {
