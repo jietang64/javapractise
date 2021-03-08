@@ -19,5 +19,6 @@ dependencies {
     implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
     compile('io.netty:netty-all:4.1.27.Final')
     compile('org.apache.commons:commons-jexl3:3.1')
+    compile "com.influxdb:influxdb-client-java:1.15.0"
 
 }

@@ -1,19 +1,28 @@
 package com.jietang;
 
 
-import com.jietang.tools.HttpClientUtils;
 import org.apache.commons.jexl3.JexlBuilder;
 import org.apache.commons.jexl3.JexlContext;
 import org.apache.commons.jexl3.MapContext;
-
-import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 //cpu_load_short,host=server02 value=0.67
 //cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257
-// cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257
+//cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257
 public class TEST {
     public static void main(String[] args) {
-        writeData();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+      //  df.setTimeZone(TimeZone.getTimeZone("UTC"));
+        Date parse = null;
+        try {
+            parse = df.parse("2021-02-25T15:00:00Z");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        System.out.println(parse.getTime());
+
     }
 
     private static void writeData() {
