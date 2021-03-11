@@ -59,21 +59,30 @@ package com.jietang.leetcode.editor.cn;
 public class p53_最大子序和 {
     public static void main(String[] args) {
         Solution solution = new p53_最大子序和().new Solution();
-        solution.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+        solution.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maxSubArray(int[] nums) {
             int max = nums[0];
-            //1.每次循环记录以i 开始的最大子序和，小于0直接结束
+            //1.每次循环记录以i 开始的最大子序和，如果 小于0则表示 后续的加上肯定比当前小 ，直接结束
+            //2.
+            i:
             for (int i = 0; i < nums.length; i++) {
-                int tmpmax = 0;
-                for (int j = i; j < nums.length; j++) {
-                    tmpmax += nums[j];
+                int singlemax = nums[i];
+                int singlesum = nums[i];
+                j:
+                for (int j = i + 1; j < nums.length; j++) {
+                    singlesum += nums[j];
+                    singlemax = singlesum > singlemax ? singlesum : singlemax;
+                    if (singlesum < 0 && j < nums.length - 1) {
+                        break j;
+                    }
                 }
+                max = singlemax > max ? singlemax : max;
             }
-            return 0;
+            return max;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
