@@ -56,18 +56,26 @@
 
 package com.jietang.leetcode.editor.cn;
 
-public class p53_最大子序和{
-    public static void main (String[] args){
+public class p53_最大子序和 {
+    public static void main(String[] args) {
         Solution solution = new p53_最大子序和().new Solution();
-
+        solution.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int maxSubArray(int[] nums) {
-        return 0;
+    class Solution {
+        public int maxSubArray(int[] nums) {
+            int max = nums[0];
+            //1.每次循环记录以i 开始的最大子序和，小于0直接结束
+            for (int i = 0; i < nums.length; i++) {
+                int tmpmax = 0;
+                for (int j = i; j < nums.length; j++) {
+                    tmpmax += nums[j];
+                }
+            }
+            return 0;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
