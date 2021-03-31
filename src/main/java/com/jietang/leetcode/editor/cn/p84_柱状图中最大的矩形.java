@@ -62,9 +62,7 @@ public class p84_柱状图中最大的矩形 {
         }
 
         // 上面那个方法虽然实现了，但是时间复杂度为 O(N2)，
-        // 采用栈的方式来实现　栈里面存放index
-        ///2 3 5 4 1 3 4 4 3
-        ///1 2 3 2 1 3 4 4 3
+        // 采用栈的方式来实现　栈里面存放index 时间复杂度为O(N)
         public int largestRectangleArea(int[] heights) {
             Stack<Integer> stack = new Stack<>();
             int result = heights[0];
