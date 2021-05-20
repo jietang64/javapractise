@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 //cpu_load_short,host=server02 value=0.67
 //cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257
 //cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257
-public class TEST2 {
+public class PatternTest {
     public static void main(String[] args) {
         String content = "3aaa3";
         //正则表达式，用于匹配非数字串，+号用于匹配出多个非数字串

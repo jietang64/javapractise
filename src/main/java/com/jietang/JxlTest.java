@@ -11,7 +11,7 @@ import java.util.Date;
 //cpu_load_short,host=server02 value=0.67
 //cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257
 //cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257
-public class TEST {
+public class JxlTest {
     public static void main(String[] args) {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
       //  df.setTimeZone(TimeZone.getTimeZone("UTC"));
