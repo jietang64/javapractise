@@ -22,9 +22,6 @@ public class PatternTest {
         //用定义好的正则表达式拆分字符串，把字符串中的数字留出来
         String[] cs = pattern.split(content);
         System.out.println(Arrays.toString(cs));
-
     }
-
-
 
 }

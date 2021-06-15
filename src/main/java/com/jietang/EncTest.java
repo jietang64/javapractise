@@ -15,16 +15,10 @@ import java.util.List;
 
 public class EncTest {
     public static void main(String[] args) {
+        String aa = "达到大大";
+        int i = aa.indexOf(" ");
+        System.out.println(i);
 
-            int start = 3 ,end =7;
-            String phoneNum = "18855556666";
-            int len = phoneNum.length();
-            int count = end- start;
-            String bit ="";
-            for(int j =0;j<count;j++){
-                bit += "*";
-            }
-        System.out.println(phoneNum.substring(0,start)+ bit +phoneNum.substring(end,len));
     }
 
 
