@@ -6,6 +6,8 @@ import com.influxdb.client.QueryApi;
 import com.influxdb.query.FluxRecord;
 import com.influxdb.query.FluxTable;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -15,10 +17,9 @@ import java.util.List;
 
 public class EncTest {
     public static void main(String[] args) {
-        String aa = "达到大大";
-        int i = aa.indexOf(" ");
-        System.out.println(i);
-
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String format = dateTimeFormatter.format(LocalDateTime.now());
+        System.out.println(format);
     }
 
 
