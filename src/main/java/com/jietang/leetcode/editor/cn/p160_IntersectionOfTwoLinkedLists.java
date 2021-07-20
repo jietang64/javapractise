@@ -78,7 +78,7 @@ import com.jietang.entity.ListNode;
 public class p160_IntersectionOfTwoLinkedLists {
     public static void main(String[] args) {
         ListNode last = new p160_IntersectionOfTwoLinkedLists()
-                .new Solution().getIntersectionNode(ListNode.ArrayToListNode(new int[]{0,1, 2, 3, 4, 5}),
+                .new Solution().getIntersectionNode(ListNode.ArrayToListNode(new int[]{0, 1, 2, 3, 4, 5}),
                 ListNode.ArrayToListNode(new int[]{1, 3, 3, 4, 5}));
         System.out.println(111);
     }
@@ -97,8 +97,6 @@ public class p160_IntersectionOfTwoLinkedLists {
      * }
      */
     public class Solution {
-        ListNode result;
-        boolean flag = true;
 
         public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
             ListNode a = headA;
@@ -121,21 +119,16 @@ public class p160_IntersectionOfTwoLinkedLists {
                     new_b = new_b.next;
                 }
             }
-            getdif(new_a, new_b);
-            return result;
+            while (new_a != null && new_b != null) {
+                if (new_a.hashCode() == new_b.hashCode()) {
+                    return new_a;
+                }
+                new_a = new_a.next;
+                new_b = new_b.next;
+            }
+            return null;
         }
 
-        private void getdif(ListNode new_a, ListNode new_b) {
-            if (new_a.next != null) {
-                getdif(new_a.next, new_b.next);
-            }
-            if (new_a.hashCode() != new_b.hashCode()) {
-                flag = false;
-            }
-            if (new_a.hashCode() == new_b.hashCode() && flag) {
-                result = new_a;
-            }
-        }
 
 
     }
