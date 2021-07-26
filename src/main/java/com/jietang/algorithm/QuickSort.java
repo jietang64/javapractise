@@ -20,37 +20,22 @@ public class QuickSort {
         System.out.println(arr);
     }
 
-    public static void QuickSort(int left, int right, int[] arr) {
-        int key = arr[left];
-        int origin_left = left;
-        int origin_right = right;
-        left++;
-        bigone:
-        while (left < right) {
-            while (arr[right] > key) {
-                right--;
-                if (left == right) {
-                    continue bigone;
-                }
+    public static void QuickSort(int left, int right, int[] array) {
+        if (left > right) return;
+        int base = array[left];
+        int i = left, j = right;
+        while (i != j) {
+            while (array[j] >= base && i < j) j--;
+            while (array[i] <= base && i < j) i++;
+            if (i < j) {
+                int tmp = array[i];
+                array[i] = array[j];
+                array[j] = tmp;
             }
-            while (arr[left] < key) {
-                left++;
-                if (left == right) {
-                    continue bigone;
-                }
-            }
-            int tem = arr[left];
-            arr[left] = arr[right];
-            arr[right] = tem;
         }
-        int tem = arr[origin_left];
-        arr[origin_left] = arr[right];
-        arr[right] = tem;
-        if (right - origin_left > 1) {
-            QuickSort(origin_left, right - 1, arr);
-        }
-        if (origin_right - right > 0) {
-            QuickSort(right, origin_right, arr);
-        }
+        array[left] = array[i];
+        array[i] = base;
+        QuickSort(left, i - 1, array);
+        QuickSort(i + 1, right, array);
     }
 }
